@@ -7,14 +7,14 @@ public class Swap {
 		
 		int arr [] = {1,2,3,4,5};
 		int arr2 [] = {5,4,3,2,1};
-//		System.out.println(arr[0]+" "+arr[1]);
-//		swap(arr[0],arr[1]);
+		System.out.println(arr[0]+" "+arr[1]);
+		swap(arr[0],arr[1]);
 //		swap2(arr,0,1);
-//		System.out.println(arr[0]+" "+arr[1]);
+		System.out.println(arr[0]+" "+arr[1]);
 		
-		System.out.println(arr[0] +" "+ arr2[0]);
-		swap3(arr,arr2);
-		System.out.println(arr[0] +" "+ arr2[0]);
+//		System.out.println(arr[0] +" "+ arr2[0]);
+//		swap3(arr,arr2);
+//		System.out.println(arr[0] +" "+ arr2[0]);
 
 	}
 	

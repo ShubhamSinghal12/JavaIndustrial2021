@@ -1,6 +1,7 @@
 package lecture5;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class ArrayDemo2 {
 
@@ -13,9 +14,12 @@ public class ArrayDemo2 {
 //		arr2[0] = 10000;
 //		System.out.println(arr[0]);
 		
-		int arr3[] = new int[10];
+		int arr3[] = new int[5];
+		System.out.println(arr3);
 		takeInput(arr3);
 		display(arr3);
+		System.out.println(arr3);
+		System.out.println(Arrays.toString(arr3));
 
 //		arr = arr3;
 //		arr2 = arr3;

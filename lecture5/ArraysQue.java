@@ -17,7 +17,9 @@ public class ArraysQue {
 		System.out.println("Max: "+ max(arr));
 //		System.out.println("Min: "+ min(arr));
 		int ele = sc.nextInt();
-		System.out.println("Found 10 at index: "+ find(arr, ele));
+		find(arr, ele);
+		int result = find(arr, ele);
+		System.out.println("Found 10 at index: "+ result);
 
 	}
 
@@ -48,9 +50,9 @@ public class ArraysQue {
 //	}
 //	
 	
-	public static int find(int[] arr, int ele) {
-		for(int i = 0; i < arr.length; i++) {
-			if(arr[i] == ele)
+	public static int find(int[] a, int ele) {
+		for(int i = 0; i < a.length; i++) {
+			if(a[i] == ele)
 			{
 				return i;
 			}
