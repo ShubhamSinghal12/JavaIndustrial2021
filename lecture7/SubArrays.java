@@ -7,7 +7,7 @@ public class SubArrays {
 		int[] arr = { 1,2,-4,4};
 //		subArrays(arr);
 //		subArrays2(arr);
-		kanades(arr);
+		kadane(arr);
 
 	}
 	public static int print(int[] arr,int a,int b) {
@@ -56,7 +56,7 @@ public class SubArrays {
 		System.out.println("Max Sum: "+ max_sum);
 	}
 
-	public static void kanades(int[] arr) {
+	public static void kadane(int[] arr) {
 		int max_sum = Integer.MIN_VALUE;
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++)
