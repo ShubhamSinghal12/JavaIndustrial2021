@@ -8,7 +8,8 @@ public class Permutations {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		System.out.println(permutations1("abc"));
-		p2("abc","");
+//		p2("aba","");
+		Trickyp2("aba", "");
 
 	}
 	
@@ -45,6 +46,32 @@ public class Permutations {
 		{
 			String nq = ques.substring(0,i)+ques.substring(i+1);
 			p2(nq, ans+ques.charAt(i));
+		}
+	}
+	
+	public static void Trickyp2(String ques, String ans)
+	{
+		if(ques.length() == 0)
+		{
+			System.out.println(ans);
+			return;
+		}
+		
+//		String nq = ques.substring(0,0)+ques.substring(1);
+//		p2(nq, ans+ques.charAt(0));
+		
+		for(int i = 0; i < ques.length(); i++)
+		{
+			boolean flag = true;
+			for(int j = i-1; j >= 0; j--)
+			{
+				if(ques.charAt(j)==ques.charAt(i))
+					flag = false;
+			}
+			if(flag) {
+				String nq = ques.substring(0,i)+ques.substring(i+1);
+				Trickyp2(nq, ans+ques.charAt(i));
+			}
 		}
 	}
 
