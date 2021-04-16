@@ -1,6 +1,7 @@
 package lecture19;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class QuickSort {
 
@@ -32,12 +33,19 @@ public class QuickSort {
 	public static int partition(int[] arr,int si,int ei)
 	{
 		int pi = si;
+		Random r = new Random();
+		int x = r.nextInt(ei-si)+si;
+		
+		int t = arr[x];
+		arr[x] = arr[ei];
+		arr[ei] = t;
+		
 		int pivot = arr[ei];
-		for(int i = si; i <= ei; i++)
+		for(int i = si; i <= ei; i++) //O(ei-si--->N)
 		{
 			if(pivot > arr[i])
 			{
-				int t = arr[i];
+				t = arr[i];
 				arr[i] = arr[pi];
 				arr[pi] = t;
 				pi++;
@@ -45,7 +53,7 @@ public class QuickSort {
 			
 		}
 		
-		int t = arr[ei];
+		t = arr[ei];
 		arr[ei] = arr[pi];
 		arr[pi] = t;
 		
