@@ -13,13 +13,17 @@ public class Person {
 //	}
 	
 	public Person() {
-		name= "-";
-		age = 0;
-		id = 2;
-		noOfPersons++;
+		
+		this("-",0,2);
+		
+//		name= "-";
+//		age = 0;
+//		id = 2;
+//		noOfPersons++;
 	}
 	
 	public Person(String myname,int myage,int myid) {
+		
 		name = myname;
 		age = myage;
 		id = myid;

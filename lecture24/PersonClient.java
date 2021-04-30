@@ -6,36 +6,36 @@ public class PersonClient {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Person p1 = new Person("Amit",20,1);
-		System.out.println(Person.noOfPersons);
-		
-		Person p2 = new Person("Amit",20,1);
-		System.out.println(p2.noOfPersons);
-		
-		Person p3 = new Person("Amit",20,1);
-		System.out.println(p3.noOfPersons);
-		
-		Person p4 = new Person("Amit",20,1);
-		System.out.println(p4.noOfPersons);
-		
-		Person p5 = new Person("Amit",20,1);
-		System.out.println(p5.noOfPersons);
-		
-		Person p6 = new Person(p1);
-		System.out.println(p6.noOfPersons);
-		
-		
-		p1.introduceYourself();
-		p2.introduceYourself();
-		
-		Person.fun2();
-		p1.fun2();
+		Person p1 = new Person();
+//		System.out.println(Person.noOfPersons);
+//		
+//		Person p2 = new Person("Amit",20,1);
+//		System.out.println(p2.noOfPersons);
+//		
+//		Person p3 = new Person("Amit",20,1);
+//		System.out.println(p3.noOfPersons);
+//		
+//		Person p4 = new Person("Amit",20,1);
+//		System.out.println(p4.noOfPersons);
+//		
+//		Person p5 = new Person("Amit",20,1);
+//		System.out.println(p5.noOfPersons);
+//		
+//		Person p6 = new Person(p1);
+//		System.out.println(p6.noOfPersons);
+//		
+//		
+//		p1.introduceYourself();
+//		p2.introduceYourself();
+//		
+//		Person.fun2();
+//		p1.fun2();
 		
 //		p1.name = "Amit";
 //		p1.age = 20;
 		
-		p2.name = "Sumit";
-		p2.age = 30;
+//		p2.name = "Sumit";
+//		p2.age = 30;
 		
 //		System.out.println(p1.name+" "+p1.age);
 //		System.out.println(p2.name+" "+p2.age);
