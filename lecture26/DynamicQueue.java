@@ -18,7 +18,7 @@ public class DynamicQueue extends Queue{
 			front = -1;
 		}
 		super.enqueue(ele);
-		System.out.println(arr.length);
+//		System.out.println(arr.length);
 	}
 
 	
