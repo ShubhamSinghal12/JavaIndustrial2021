@@ -240,6 +240,125 @@ public class LinkedList {
 		return td;
 		
 	}
+
+	public void reverse()
+	{
+		Node prev = null;
+		Node curr = head;
+		while(curr != null)
+		{
+			Node ahead = curr.next;
+			
+			curr.next = prev;
+			
+			prev = curr;
+			curr = ahead;
+		}
+		
+		head = prev;
+	}
+	
+	
+	
+	public void reverseR() {
+		
+		reverseRP(head,null);
+	}
+	
+	private void reverseRP(Node cur,Node prev) {
+		
+		if(cur == null)
+		{
+			head = prev;
+			return;
+		}
+		
+		reverseRP(cur.next,cur);
+		cur.next = prev;
+		
+	}
+	
+	public void reverseOR() {
+		
+		Node temp = head;
+		reverseOR(head);
+		temp.next = null;
+		
+	}
+	
+	private void reverseOR(Node cur) {
+		
+		if(cur.next == null)
+		{
+			head = cur;
+			return;
+		}
+		
+		reverseOR(cur.next);
+		
+		cur.next.next = cur;
+		
+	}
+
+	public void DummyList()
+	{
+		Node head1 = null;
+		Node head2 = null;
+		
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		Node n4 = new Node(40);
+		Node n5 = new Node(50);
+		Node n6 = new Node(60);
+		Node n7 = new Node(70);
+		Node n8 = new Node(80);
+		Node n9 = new Node(90);
+		Node n10 = new Node(100);
+		Node n11 = new Node(110);
+		Node n12 = new Node(120);
+		
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+		n7.next = n8;
+		n8.next = n9;
+		n9.next = n10;
+		n10.next = null;
+		n11.next = n12;
+		n12.next = n7;
+		
+		head1 = n1;
+		head2 = n11;
+		
+		intersection(head1,head2);
+	}
+	
+	private void intersection(Node fp, Node sp)
+	{
+		Node temp1 = fp;
+		Node temp2 = sp;
+		while(fp != sp)
+		{
+			if(fp == null)
+			{
+				fp = temp2;
+			}
+			
+			if(sp == null)
+			{
+				sp = temp1;
+			}
+			
+			fp = fp.next;
+			sp = sp.next;
+			
+		}
+		System.out.println(fp.data);
+	}
 	
 	
 
