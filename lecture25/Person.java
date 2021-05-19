@@ -50,6 +50,8 @@ public class Person {
 			System.out.println(e.getMessage()+" Setting age to 0");
 			this.age = 0;
 		}
+		int[] ar = new int[1];
+		System.out.println(ar[2]);
 	}
 
 	public void introduceYourself() {

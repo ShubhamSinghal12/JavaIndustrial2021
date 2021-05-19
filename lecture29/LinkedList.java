@@ -299,6 +299,81 @@ public class LinkedList {
 		cur.next.next = cur;
 		
 	}
+	public void fold()
+	{
+		
+		Node mid = midN();
+		Node h1 = head;
+		Node h2 = mid.next;
+		mid.next = null;
+//		System.out.println(h2.data);
+		h2 = reverseFold(h2);
+//		System.out.println(h2.data);
+		Node cur = h1;
+		Node ll2 = h2;
+		
+		//Method 2
+//		Node cur = new Node(0);
+//		while(h1 != null || h2 != null)
+//		{
+//			if(h1 != null)
+//			{
+//				cur.next = h1;
+//				h1 = h1.next;
+//				cur = cur.next;
+//			}
+//			if(h2 != null)
+//			{
+//				cur.next = h2;
+//				h2 = h2.next;
+//				cur = cur.next;
+//			}
+//		}
+		
+		while(ll2 != null)
+		{
+			Node ahead = cur.next;
+			cur.next = ll2;
+			
+			ll2 = ll2.next;
+			
+			h2.next = ahead;
+			h2 = ll2;
+			
+			cur = ahead;
+		}
+		
+	}
+	
+	
+	private Node reverseFold(Node h2)
+	{
+		Node prev = null;
+		Node curr = h2;
+		while(curr != null)
+		{
+			Node ahead = curr.next;
+			
+			curr.next = prev;
+			
+			prev = curr;
+			curr = ahead;
+		}
+		
+		return prev;
+	}
+	private Node midN()
+	{
+		Node slow = head;
+		Node fast = head;
+		while(fast != null && fast.next != null)
+		{
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		
+		return slow;
+	}
 
 	public void DummyList()
 	{
@@ -360,6 +435,150 @@ public class LinkedList {
 		System.out.println(fp.data);
 	}
 	
+	public int mid()
+	{
+		Node slow = head;
+		Node fast = head;
+		while(fast != null && fast.next != null)
+		{
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		
+		return slow.data;
+	}
+	
+	public int kth(int k)
+	{
+		Node a = head;
+		Node b = head;
+		
+		while(k > 0)
+		{
+			k--;
+			b = b.next;
+		}
+		while(b!=null)
+		{
+			a = a.next;
+			b = b.next;
+		}
+		return a.data;
+	}
+	
+	public void reverse_k(int k) {
+		head = reverse_k(head,k);
+		
+	}
+	private Node reverse_k(Node n, int k)
+	{
+		if(n == null)
+		{
+			return null;
+		}
+		
+		Node temp = n;
+		int t = k;
+		while(t-- > 0 && temp != null)
+		{
+			temp = temp.next;
+		}
+		
+		Node prev = reverse_k(temp,k);
+		Node cur = n;
+		while(cur != temp)
+		{
+			Node ahead = cur.next;
+			
+			cur.next = prev;
+			
+			prev = cur;
+			cur = ahead;	
+		}
+		
+		return prev;
+		
+		
+	}
+	
+	public void DummyListCycle()
+	{
+		Node head1 = null;
+		
+		Node n1 = new Node(10);
+		Node n2 = new Node(20);
+		Node n3 = new Node(30);
+		Node n4 = new Node(40);
+		Node n5 = new Node(50);
+		Node n6 = new Node(60);
+		Node n7 = new Node(70);
+		Node n8 = new Node(80);
+		
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+		n7.next = n8;
+		n8.next = n3;
+		
+		
+		head1 = n1;
+		
+		head = n1;
+		
+		cycleDR(head1);
+	}
+	
+	private void cycleDR(Node n)
+	{
+		Node slow = n;
+		Node fast = n;
+		while(fast != null && fast.next != null)
+		{
+			slow = slow.next;
+			fast = fast.next.next;
+			if(slow == fast)
+			{
+				System.out.println(slow.data+" fast and slow meet at this. Thus there is a cycle");
+				break;
+			}
+		}
+//		if(fast == null || fast.next == null)
+//		{
+//			System.out.println("There is no cycle");
+//		}
+		
+		int count = 1;
+		Node temp = slow;
+		while(temp.next != slow)
+		{
+			temp = temp.next;
+			count++;
+		}
+		System.out.println("Cylce count: "+ count);
+		
+		Node a = slow;
+		Node b = n;
+		
+//		while(count-- > 0)
+//		{
+//			a = a.next;
+//		}
+		
+		System.out.println(a.data);
+		while(a.next != b.next)
+		{
+			a = a.next;
+			b = b.next;
+		}
+		
+		a.next = null;
+//		System.out.println(head.data);
+		display();
+	}
+
 	
 
 }
