@@ -1,6 +1,8 @@
 package lecture32;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GenericTrees {
@@ -188,6 +190,89 @@ public class GenericTrees {
 		System.out.print(node.data+" ");
 	}
 	
+	public void mirror()
+	{
+		mirror(root);
+	}
 	
+	private void mirror(Node node)
+	{	
+		Collections.reverse(node.child);
+		for(Node val : node.child)
+		{
+			mirror(val);
+		}
+	}
+	
+	public void levelOrder()
+	{
+		LinkedList<Node> qt = new LinkedList<>();
+		qt.add(root);
+		while(!qt.isEmpty())
+		{
+			Node n = qt.removeFirst();
+			System.out.print(n.data+" ");
+			for(Node val:n.child)
+			{
+				qt.add(val);
+			}
+//			System.out.println();
+		}
+		System.out.println();
+		
+	}
+	
+	public void levelbylevelOrder()
+	{
+		LinkedList<Node> qt = new LinkedList<>();
+		LinkedList<Node> helper = new LinkedList<>();
+		qt.add(root);
+		while(!qt.isEmpty())
+		{
+			Node n = qt.removeFirst();
+			System.out.print(n.data+" ");
+			for(Node val:n.child)
+			{
+				helper.add(val);
+			}
+			
+			if(qt.isEmpty())
+			{
+				qt = helper;
+				helper = new LinkedList<>();
+				System.out.println();
+			}
+//			System.out.println();
+		}
+		System.out.println();
+		
+	}
+	public void levelbylevelOrder2()
+	{
+		LinkedList<Node> qt = new LinkedList<>();
+		int ct = 1, cthelp = 0;
+		qt.add(root);
+		while(!qt.isEmpty())
+		{
+			Node n = qt.removeFirst();
+			ct--;
+			System.out.print(n.data+" ");
+			for(Node val:n.child)
+			{
+				qt.add(val);
+				cthelp++;
+			}
+			
+			if(ct == 0)
+			{
+				ct = cthelp;
+				cthelp = 0;
+				System.out.println();
+			}
+//			System.out.println();
+		}
+		System.out.println();
+		
+	}
 
 }

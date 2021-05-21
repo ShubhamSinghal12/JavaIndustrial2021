@@ -10,11 +10,16 @@ public class GenericClient {
 		gt.createTree();
 		gt.display();
 		System.out.println("------------");
-		System.out.println(gt.size());
-		System.out.println(gt.max());
-		System.out.println(gt.ht());
+//		System.out.println(gt.size());
+//		System.out.println(gt.max());
+//		System.out.println(gt.ht());
+//		
+//		gt.postorder();
+//		gt.mirror();
+//		gt.display();
 		
-		gt.postorder();
+		gt.levelbylevelOrder2();
+		
 
 	}
 
