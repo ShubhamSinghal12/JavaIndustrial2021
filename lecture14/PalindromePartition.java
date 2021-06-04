@@ -4,7 +4,7 @@ public class PalindromePartition {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		palindromePart("abcb", "");
+		palindromePart("nitin", "");
 
 	}
 	

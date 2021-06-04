@@ -7,6 +7,7 @@ public class PersonClient {
 		// TODO Auto-generated method stub
 		
 		Person p1 = new Person();
+		System.out.println(p1.name);
 //		System.out.println(Person.noOfPersons);
 //		
 //		Person p2 = new Person("Amit",20,1);

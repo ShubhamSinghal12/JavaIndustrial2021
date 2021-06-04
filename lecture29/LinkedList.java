@@ -578,7 +578,4 @@ public class LinkedList {
 //		System.out.println(head.data);
 		display();
 	}
-
-	
-
 }
